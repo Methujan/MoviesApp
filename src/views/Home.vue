@@ -34,7 +34,7 @@
             <div class="type">{{ movie.Type }}</div>
           </div>
           <div class="detail">
-            <p class="y">{{ movie.Year }}</p>
+            <p class="year">{{ movie.Year }}</p>
             <h3>{{ movie.Title }}</h3>
           </div>
         </router-link>
