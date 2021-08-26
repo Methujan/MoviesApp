@@ -1,4 +1,6 @@
-# vue-movie-db-yt
+# MovieApp
+
+MovieApp is a Vue app that searchs for movies using the OMDb API.
 
 ## Screenshots
 
