@@ -1,4 +1,5 @@
 // https://docs.cypress.io/api/introduction/api.html
+Cypress.config("waitAfterEachCommand", 2000);
 
 describe("Home", () => {
   beforeEach(() => {
@@ -16,6 +17,14 @@ describe("Home", () => {
       "p",
       "The young pirate Monkey D Luffy sets out on a quest in search of the legendary treasure One Piece."
     );
+  });
+
+  it("Redirects to Homepage when header is clicked", () => {
+    cy.get(".search-textbox").type("Pokemon");
+    cy.get(".search-button").click();
+    cy.contains("h3", "Pokémon: Mewtwo Returns").click();
+    cy.contains("h1", "Movies").click();
+    cy.get("div").should("have.class", "home");
   });
 });
 
@@ -42,9 +51,10 @@ describe("Search", () => {
     cy.contains("h3", "Naruto: Shippûden").click();
   });
 
-  it("Search bar should not be visible once the movie is clicked", () => {
+  it("Search bar should not exist once the movie is clicked", () => {
     cy.get(".search-textbox").type("Bleach");
     cy.get(".search-button").click();
     cy.contains("h3", "Bleach: Memories of Nobody").click();
+    cy.get(".search-textbox").should("not.exist");
   });
 });
