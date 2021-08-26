@@ -22,8 +22,9 @@
         type="text"
         placeholder="What are you looking for?"
         v-model="search"
+        class="search-textbox"
       />
-      <input type="submit" value="Search" />
+      <input type="submit" value="Search" class="search-button" />
     </form>
 
     <div class="movies-list">
